@@ -48,7 +48,16 @@
     }
   }
 
+  let yOffset = 0;
+  function scrolloop() {
+    yOffset = window.pageYOffset;
+  }
+
   window.addEventListener('resize', setLayout);
+  window.addEventListener('scroll', () => {
+    scrolloop();
+  });
+
   setLayout();
 
 })();
