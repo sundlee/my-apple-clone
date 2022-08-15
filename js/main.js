@@ -71,14 +71,27 @@
     document.body.setAttribute('id', `show-scene-${currentScene}`);
   }
 
+  function calcValues(values, currentYOffset) {
+    let rv;
+    let scrollRatio = currentYOffset / sceneInfo[currentScene].scrollHeight;
+    rv = scrollRatio * (values[1] - values[0]) + values[0];
+    return rv;
+  }
+
   function playAnimation() {
+    const objs = sceneInfo[currentScene].objs;
+    const values = sceneInfo[currentScene].values;
+    const currentYOffset = yOffset - prevScrollHeight;
     switch(currentScene) {
       case 0:
-        // console.log('0 play');
+        let messageA_opacity_in = calcValues(values.messageA_opacity, currentYOffset);
+        objs.messageA.style.opacity = messageA_opacity_in;
+        // console.log(messageA_opacity_in);
         break;
 
       case 1:
         // console.log('1 play');
+        // console.log(currentYOffset);
         break;
       
       case 2:
