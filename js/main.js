@@ -206,8 +206,8 @@
 		switch (currentScene) {
 			case 0:
 				// console.log('0 play');
-				// let sequence = Math.round(calcValues(values.imageSequence, currentYOffset));
-				// objs.context.drawImage(objs.videoImages[sequence], 0, 0);
+				let sequence = Math.round(calcValues(values.imageSequence, currentYOffset));
+				objs.context.drawImage(objs.videoImages[sequence], 0, 0);
 				objs.canvas.style.opacity = calcValues(values.canvas_opacity, currentYOffset);
 
 				if (scrollRatio <= 0.22) {
@@ -254,8 +254,8 @@
 
 			case 2:
 				// console.log('2 play');
-				// let sequence2 = Math.round(calcValues(values.imageSequence, currentYOffset));
-				// objs.context.drawImage(objs.videoImages[sequence2], 0, 0);
+				let sequence2 = Math.round(calcValues(values.imageSequence, currentYOffset));
+				objs.context.drawImage(objs.videoImages[sequence2], 0, 0);
 
 				if (scrollRatio <= 0.5) {
 					// in
