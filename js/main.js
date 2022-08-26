@@ -400,6 +400,15 @@
 					objs.canvas.height
 				);
 
+				if (scrollRatio < values.rect1X[2].end) {
+					step = 1;
+					objs.canvas.classList.remove('sticky');
+				} else {
+					step = 2;
+					objs.canvas.classList.add('sticky');
+					objs.canvas.style.top = `${-(objs.canvas.height - objs.canvas.height * canvasScaleRatio) / 2}px`;
+				}
+
 				break;
 		}
 	}
